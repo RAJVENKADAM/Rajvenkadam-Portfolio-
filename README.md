@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # RAJVENKADAM's Portfolio Website
 
 A fully responsive, futuristic portfolio website for a MERN Stack Developer with comprehensive SEO optimization.
@@ -159,3 +160,7 @@ For development, use the unminified files. For production, the HTML files are al
 - Review and update meta descriptions periodically
 - Update the sitemap.xml when adding new pages
 - Monitor Google Search Console for any issues
+=======
+# Rajvenkadam-Portfolio-
+Rajvenkadam’s MERN Stack Developer Portfolio – showcasing projects, skills, apps, certificates, and full-stack web development expertise.
+>>>>>>> 7ac5165d17e7eee78322ca2d86ebe55ec50cd537
