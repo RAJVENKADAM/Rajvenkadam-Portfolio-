@@ -24,7 +24,10 @@
     <meta property="twitter:description" content="Discover the technical skills of RAJVENKADAM, a MERN Stack Developer proficient in MongoDB, Express, React, Node.js, HTML, CSS, and JavaScript.">
     <meta property="twitter:image" content="https://www.rajvenkadamporfolio.com/assets/images/profile.png">
     
-    <link rel="stylesheet" href="dist/css/styles.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/images/profile.png">
 </head>
 <body>
@@ -33,7 +36,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">RAJVENKADAM</a>
+                    <a href="index.html">Don't wait for the Opportunities, Build them!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -57,6 +60,8 @@
             </div>
         </nav>
     </header>
+
+    </section>
 
     <main>
         <!-- Skills Section -->
@@ -134,14 +139,169 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 RAJVENKADAM. All rights reserved.</p>
+
+    <!-- Modal -->
+    <div id="skillModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="modalTitle">Skill Details</h2>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <p>Details about this skill will appear here.</p>
+            </div>
+            <div class="modal-footer">
+                <button class="btn-modal" id="modalCloseBtn">Close</button>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="dist/js/script.min.js"></script>
+    <script>
+        // Skill details data
+        const skillDetails = {
+            'MongoDB': {
+                title: 'MongoDB',
+                description: 'A powerful NoSQL database that provides high performance, high availability, and automatic scaling.',
+                details: [
+                    'Schema-less database design',
+                    'High performance with indexing',
+                    'Replication and sharding for scalability',
+                    'Aggregation framework for complex queries',
+                    'Built-in security features',
+                    'Cloud database services (MongoDB Atlas)'
+                ]
+            },
+            'Express': {
+                title: 'Express.js',
+                description: 'A minimal and flexible Node.js web application framework that provides a robust set of features for web and mobile applications.',
+                details: [
+                    'RESTful API development',
+                    'Middleware integration',
+                    'Routing management',
+                    'Template engine support',
+                    'Error handling',
+                    'Security best practices'
+                ]
+            },
+            'React': {
+                title: 'React',
+                description: 'A JavaScript library for building user interfaces, particularly single-page applications where you need a fast, interactive user experience.',
+                details: [
+                    'Component-based architecture',
+                    'Virtual DOM for performance',
+                    'State management with hooks',
+                    'Context API for global state',
+                    'React Router for navigation',
+                    'Performance optimization techniques'
+                ]
+            },
+            'Node.js': {
+                title: 'Node.js',
+                description: 'A JavaScript runtime built on Chrome\'s V8 JavaScript engine for building fast and scalable server-side and networking applications.',
+                details: [
+                    'Event-driven, non-blocking I/O',
+                    'NPM package management',
+                    'RESTful API development',
+                    'Database integration',
+                    'Authentication and security',
+                    'Testing with Jest and Mocha'
+                ]
+            },
+            'HTML': {
+                title: 'HTML',
+                description: 'The standard markup language for documents designed to be displayed in a web browser.',
+                details: [
+                    'Semantic HTML5 elements',
+                    'Accessibility standards (ARIA)',
+                    'SEO best practices',
+                    'Form validation',
+                    'Multimedia integration',
+                    'Canvas and SVG graphics'
+                ]
+            },
+            'CSS': {
+                title: 'CSS',
+                description: 'A stylesheet language used for describing the presentation of a document written in HTML.',
+                details: [
+                    'Flexbox and Grid layouts',
+                    'Responsive design with media queries',
+                    'CSS animations and transitions',
+                    'Preprocessors (SASS/SCSS)',
+                    'CSS frameworks (Bootstrap, Tailwind)',
+                    'Modern CSS features (variables, custom properties)'
+                ]
+            },
+            'JavaScript': {
+                title: 'JavaScript',
+                description: 'A programming language that conforms to the ECMAScript specification, enabling interactive web pages.',
+                details: [
+                    'ES6+ features (arrow functions, destructuring, modules)',
+                    'Asynchronous programming (Promises, async/await)',
+                    'DOM manipulation and event handling',
+                    'AJAX and Fetch API',
+                    'Functional programming concepts',
+                    'Testing frameworks (Jest, Mocha)'
+                ]
+            },
+            'More Skills': {
+                title: 'Additional Skills',
+                description: 'Continuously expanding my skillset with new technologies and methodologies.',
+                details: [
+                    'Git and version control',
+                    'Agile and Scrum methodologies',
+                    'UI/UX design principles',
+                    'Performance optimization',
+                    'Cross-browser compatibility',
+                    'Web accessibility standards'
+                ]
+            }
+        };
+
+        // Add click event listeners to skill cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const skillCards = document.querySelectorAll('.skill-card');
+            const modal = document.getElementById('skillModal');
+            const modalTitle = document.getElementById('modalTitle');
+            const modalBody = document.getElementById('modalBody');
+            const closeBtn = document.querySelector('.close');
+            const modalCloseBtn = document.getElementById('modalCloseBtn');
+
+            skillCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const skillName = this.querySelector('h3').textContent;
+                    const skill = skillDetails[skillName];
+
+                    if (skill) {
+                        modalTitle.textContent = skill.title;
+                        modalBody.innerHTML = `
+                            <p>${skill.description}</p>
+                            <h3>What I know:</h3>
+                            <ul>
+                                ${skill.details.map(detail => `<li>${detail}</li>`).join('')}
+                            </ul>
+                        `;
+                        modal.style.display = 'block';
+                    }
+                });
+            });
+
+            // Close modal functions
+            function closeModal() {
+                modal.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closeModal);
+            modalCloseBtn.addEventListener('click', closeModal);
+
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeModal();
+                }
+            });
+        });
+    </script>
     <!-- Structured Data -->
     <script type="application/ld+json">
     {

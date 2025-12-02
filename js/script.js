@@ -74,11 +74,18 @@ document.addEventListener('DOMContentLoaded', () => {
     initShapes();
     
     // Add fade-in class to elements that should animate on load
-    const heroElements = document.querySelectorAll('.hero-content > *');
-    heroElements.forEach((el, index) => {
-        el.style.transitionDelay = `${index * 0.2}s`;
-        el.classList.add('fade-in', 'appear');
-    });
+    const heroText = document.querySelector('.hero-text');
+    const heroProfile = document.querySelector('.profile-section');
+    
+    if (heroText) {
+        heroText.style.transitionDelay = '0.2s';
+        heroText.classList.add('fade-in', 'appear');
+    }
+    
+    if (heroProfile) {
+        heroProfile.style.transitionDelay = '0.4s';
+        heroProfile.classList.add('fade-in', 'appear');
+    }
 });
 
 // Smooth scrolling for anchor links

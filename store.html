@@ -24,7 +24,10 @@
     <meta property="twitter:description" content="Explore RAJVENKADAM's portfolio store featuring projects, certificates, and professional resume.">
     <meta property="twitter:image" content="https://www.rajvenkadamporfolio.com/assets/images/profile.png">
     
-    <link rel="stylesheet" href="dist/css/styles.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/images/profile.png">
 </head>
 <body>
@@ -33,7 +36,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">RAJVENKADAM</a>
+                    <a href="index.html">Don't wait for the Opportunities, Build them!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -58,6 +61,8 @@
         </nav>
     </header>
 
+    </section>
+
     <main>
         <!-- Store Section -->
         <section class="store">
@@ -71,26 +76,25 @@
                         <button class="tab-link active" data-tab="apps">Apps</button>
                         <button class="tab-link" data-tab="certificates">Certificates</button>
                         <button class="tab-link" data-tab="resume">Resume</button>
-                        <button class="tab-link" data-tab="future">More</button>
                     </div>
                     
                     <div class="tab-content">
                         <!-- Apps Tab -->
                         <div id="apps" class="tab-pane active">
                             <div class="store-grid">
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="alpha">
                                     <div class="card-badge">Coming Soon</div>
                                     <h3>Project Alpha</h3>
                                     <p>An innovative web application built with the latest technologies.</p>
                                 </div>
                                 
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="beta">
                                     <div class="card-badge">Coming Soon</div>
                                     <h3>Project Beta</h3>
                                     <p>A mobile-responsive solution for modern businesses.</p>
                                 </div>
                                 
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="gamma">
                                     <div class="card-badge">Coming Soon</div>
                                     <h3>Project Gamma</h3>
                                     <p>An enterprise-level application with advanced features.</p>
@@ -101,19 +105,19 @@
                         <!-- Certificates Tab -->
                         <div id="certificates" class="tab-pane">
                             <div class="store-grid">
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="mern">
                                     <div class="certificate-placeholder"></div>
                                     <h3>MERN Stack Certification</h3>
                                     <p>Complete certification in MongoDB, Express, React, and Node.js development.</p>
                                 </div>
                                 
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="js">
                                     <div class="certificate-placeholder"></div>
                                     <h3>Advanced JavaScript</h3>
                                     <p>In-depth knowledge of modern JavaScript ES6+ features.</p>
                                 </div>
                                 
-                                <div class="store-card glass-card">
+                                <div class="store-card glass-card" data-project="uiux">
                                     <div class="certificate-placeholder"></div>
                                     <h3>UI/UX Design</h3>
                                     <p>User-centered design principles and implementation techniques.</p>
@@ -147,14 +151,169 @@
         </section>
     </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 RAJVENKADAM. All rights reserved.</p>
+
+    <!-- Project Modal -->
+    <div id="projectModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="modal-header">
+                <h2 id="projectModalTitle">Project Details</h2>
+            </div>
+            <div class="modal-body" id="projectModalBody">
+                <p>Details about this project will appear here.</p>
+            </div>
+            <div class="modal-footer">
+                <a href="#" id="projectLink" class="btn-modal" target="_blank">Download APK</a>
+                <button class="btn-modal" id="projectModalCloseBtn">Close</button>
+            </div>
         </div>
-    </footer>
+    </div>
 
     <script src="dist/js/script.min.js"></script>
+    <script>
+        // Project details data
+        const projectDetails = {
+            'alpha': {
+                title: 'Project Alpha',
+                description: 'An innovative web application built with the latest technologies.',
+                features: [
+                    'Responsive design for all devices',
+                    'Real-time data synchronization',
+                    'User authentication and authorization',
+                    'Advanced analytics dashboard',
+                    'API integration with third-party services',
+                    'Performance optimized for fast loading'
+                ],
+                technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
+                status: 'Coming Soon',
+                apkLink: '#'
+            },
+            'beta': {
+                title: 'Project Beta',
+                description: 'A mobile-responsive solution for modern businesses.',
+                features: [
+                    'Cross-platform compatibility',
+                    'Mobile-first design approach',
+                    'Offline functionality support',
+                    'Push notifications system',
+                    'Social media integration',
+                    'Customizable user interface'
+                ],
+                technologies: ['React Native', 'Firebase', 'Redux'],
+                status: 'Coming Soon',
+                apkLink: '#'
+            },
+            'gamma': {
+                title: 'Project Gamma',
+                description: 'An enterprise-level application with advanced features.',
+                features: [
+                    'Multi-tenant architecture',
+                    'Role-based access control',
+                    'Advanced reporting and analytics',
+                    'Data encryption and security',
+                    'Scalable microservices architecture',
+                    'CI/CD pipeline integration'
+                ],
+                technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Docker'],
+                status: 'Coming Soon',
+                apkLink: '#'
+            },
+            'mern': {
+                title: 'MERN Stack Certification',
+                description: 'Complete certification in MongoDB, Express, React, and Node.js development.',
+                features: [
+                    'Full-stack web development proficiency',
+                    'Database design and management with MongoDB',
+                    'RESTful API development with Express',
+                    'Interactive UI creation with React',
+                    'Server-side programming with Node.js',
+                    'Real-world project implementation'
+                ],
+                technologies: ['MongoDB', 'Express', 'React', 'Node.js'],
+                status: 'Completed',
+                apkLink: '#'
+            },
+            'js': {
+                title: 'Advanced JavaScript Certification',
+                description: 'In-depth knowledge of modern JavaScript ES6+ features.',
+                features: [
+                    'ES6+ features mastery',
+                    'Asynchronous programming with Promises and async/await',
+                    'DOM manipulation and event handling',
+                    'Functional programming concepts',
+                    'Error handling and debugging',
+                    'Testing and performance optimization'
+                ],
+                technologies: ['JavaScript', 'ES6+', 'Jest'],
+                status: 'Completed',
+                apkLink: '#'
+            },
+            'uiux': {
+                title: 'UI/UX Design Certification',
+                description: 'User-centered design principles and implementation techniques.',
+                features: [
+                    'User research and persona development',
+                    'Wireframing and prototyping',
+                    'Visual design principles',
+                    'Usability testing methods',
+                    'Responsive design implementation',
+                    'Accessibility standards compliance'
+                ],
+                technologies: ['Figma', 'Adobe XD', 'Sketch'],
+                status: 'Completed',
+                apkLink: '#'
+            }
+        };
+
+        // Add click event listeners to project cards
+        document.addEventListener('DOMContentLoaded', function() {
+            const projectCards = document.querySelectorAll('.store-card');
+            const modal = document.getElementById('projectModal');
+            const modalTitle = document.getElementById('projectModalTitle');
+            const modalBody = document.getElementById('projectModalBody');
+            const projectLink = document.getElementById('projectLink');
+            const closeBtn = document.querySelector('.close');
+            const modalCloseBtn = document.getElementById('projectModalCloseBtn');
+
+            projectCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const projectKey = this.getAttribute('data-project');
+                    const project = projectDetails[projectKey];
+
+                    if (project) {
+                        modalTitle.textContent = project.title;
+                        modalBody.innerHTML = `
+                            <p><strong>Status:</strong> <span class="card-badge">${project.status}</span></p>
+                            <p>${project.description}</p>
+                            <h3>Key Features:</h3>
+                            <ul>
+                                ${project.features.map(feature => `<li>${feature}</li>`).join('')}
+                            </ul>
+                            <h3>Technologies Used:</h3>
+                            <p>${project.technologies.join(', ')}</p>
+                        `;
+                        projectLink.href = project.apkLink;
+                        modal.style.display = 'block';
+                    }
+                });
+            });
+
+            // Close modal functions
+            function closeProjectModal() {
+                modal.style.display = 'none';
+            }
+
+            closeBtn.addEventListener('click', closeProjectModal);
+            modalCloseBtn.addEventListener('click', closeProjectModal);
+
+            // Close modal when clicking outside of it
+            window.addEventListener('click', function(event) {
+                if (event.target === modal) {
+                    closeProjectModal();
+                }
+            });
+        });
+    </script>
     <!-- Structured Data -->
     <script type="application/ld+json">
     {

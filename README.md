@@ -1,13 +1,12 @@
-<<<<<<< HEAD
-# RAJVENKADAM's Portfolio Website
+# RAJVENKADAM's Professional Portfolio Website
 
-A fully responsive, futuristic portfolio website for a MERN Stack Developer with comprehensive SEO optimization.
+A fully responsive, professional portfolio website for a MERN Stack Developer with comprehensive SEO optimization and a sophisticated #68018A color scheme.
 
 ## Project Structure
 
 ```
 portfolio/
-├── index.html          # Home Page
+├── index.html          # Home Page (Professional Layout)
 ├── about.html          # About Me Page
 ├── skills.html         # Skills Page
 ├── store.html          # My Store Page
@@ -26,6 +25,31 @@ portfolio/
     └── js/
         └── script.min.js
 ```
+
+## Color Scheme
+
+The website now uses a sophisticated #68018A deep purple/magenta color scheme:
+- Primary Color: #68018A (Deep Purple/Magenta)
+- Secondary Color: #8A02B8 (Slightly lighter shade)
+- Accent Color: #A64CC0 (Lighter accent)
+- Background: Transparent
+- Text: #f0f0f0 (Light)
+
+All glowing effects and animations have been preserved with the new color scheme.
+
+## Redesigned Home Page Features
+
+The home page has been completely redesigned with a modern, professional layout:
+- Fixed single page with 16:9 aspect ratio
+- Reduced height navigation bar
+- Full image instead of round profile
+- Transparent background
+- Image aligned from bottom to top
+- Two-column layout with profile image and text content
+- Professional statistics section highlighting experience
+- Enhanced glassmorphism card design
+- Improved visual hierarchy and typography
+- Better responsive design for all screen sizes
 
 ## SEO Features Implemented
 
@@ -58,7 +82,7 @@ portfolio/
 ## Features
 
 - Fully responsive design
-- Futuristic neon-gradient aesthetic
+- Professional #68018A color scheme with glowing effects
 - Glassmorphism UI elements
 - Smooth animations and transitions
 - Mobile-friendly navigation
@@ -74,13 +98,14 @@ portfolio/
 ### 2. Add Your Profile Picture
 - Replace `assets/images/profile.png` with your actual profile picture
 - Ensure the filename remains `profile.png` or update all references in HTML files
+- For best results, use a full-body image for the home page
 
 ### 3. Update About Me Content
 - Edit the paragraph in `about.html` under the "about-text" class
 - Modify timeline items in the same file to reflect your journey
 
 ### 4. Add More Skills
-- In `skills.html`, duplicate a [skill-card](file:///e:/My%20App/My%20Portfolio/css/styles.css#L205-L213) element
+- In `skills.html`, duplicate a [skill-card](file:///e:/My%20App/My%20Portfolio/css/styles.css#L341-L349) element
 - Update the icon, title, and description
 - For new icons, create new CSS classes similar to existing ones
 
@@ -160,7 +185,3 @@ For development, use the unminified files. For production, the HTML files are al
 - Review and update meta descriptions periodically
 - Update the sitemap.xml when adding new pages
 - Monitor Google Search Console for any issues
-=======
-# Rajvenkadam-Portfolio-
-Rajvenkadam’s MERN Stack Developer Portfolio – showcasing projects, skills, apps, certificates, and full-stack web development expertise.
->>>>>>> 7ac5165d17e7eee78322ca2d86ebe55ec50cd537
