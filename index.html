@@ -1,39 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>RAJVENKADAM | MERN Stack Developer Portfolio</title>
-    <meta name="description" content="Professional portfolio of RAJVENKADAM, a skilled MERN Stack Developer specializing in MongoDB, Express, React, and Node.js. Fast learner delivering projects on time.">
-    <meta name="keywords" content="MERN Stack Developer, MongoDB, Express, React, Node.js, Full Stack Developer, Web Developer, JavaScript, HTML, CSS, Portfolio">
-    <meta name="author" content="RAJVENKADAM">
-    <meta name="robots" content="index, follow">
-    <link rel="canonical" href="https://www.rajvenkadamporfolio.com/">
-    
-    <!-- Open Graph / Facebook -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="https://www.rajvenkadamporfolio.com/">
-    <meta property="og:title" content="RAJVENKADAM | MERN Stack Developer Portfolio">
-    <meta property="og:description" content="Professional portfolio of RAJVENKADAM, a skilled MERN Stack Developer specializing in MongoDB, Express, React, and Node.js.">
-    <meta property="og:image" content="https://www.rajvenkadamporfolio.com/assets/images/profile.png">
-    
-    <!-- Twitter -->
-    <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://www.rajvenkadamporfolio.com/">
-    <meta property="twitter:title" content="RAJVENKADAM | MERN Stack Developer Portfolio">
-    <meta property="twitter:description" content="Professional portfolio of RAJVENKADAM, a skilled MERN Stack Developer specializing in MongoDB, Express, React, and Node.js.">
-    <meta property="twitter:image" content="https://www.rajvenkadamporfolio.com/assets/images/profile.png">
-    
-    <link rel="stylesheet" href="dist/css/styles.min.css">
-    <link rel="icon" href="assets/images/profile.png">
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>RAJVENKADAM | Software Developer</title>
+
+    <link rel="stylesheet" href="css/styles.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <header>
         <!-- Navbar -->
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">RAJVENKADAM</a>
+                    <a href="index.html">Don't wait for the Opportunities, Build them!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -49,7 +34,7 @@
                         <a href="store.html" class="nav-link">My Store</a>
                     </li>
                 </ul>
-                <div class="nav-toggle" id="mobile-menu">
+                <div class="nav-toggle" id="hamburger">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -58,54 +43,48 @@
         </nav>
     </header>
 
-    <main>
-        <!-- Hero Section -->
-        <section class="hero">
-            <div class="hero-container">
-                <div class="hero-content">
-                    <div class="profile-img">
-                        <img src="assets/images/profile.png" alt="RAJVENKADAM - MERN Stack Developer" loading="lazy">
-                    </div>
-                    <h1 class="hero-title">RAJVENKADAM</h1>
-                    <h2 class="hero-subtitle">MERN Stack Developer</h2>
-                    <p class="hero-description">I learn anything fast and deliver any project on time — even from zero.</p>
-                    <div class="hero-buttons">
-                        <a href="skills.html" class="btn btn-primary">View Skills</a>
-                        <a href="store.html" class="btn btn-secondary">Visit My Store</a>
-                    </div>
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+
+            <!-- LEFT TEXT -->
+            <div class="hero-text fade-in">
+                <h2>Hello.</h2>
+                <h1>I'm <span class="purple">RAJVENKADAM</span></h1>
+                <h3>Software Developer</h3>
+
+                <div class="buttons">
+                    <a href="store.html" class="btn primary">Explore my projects</a>
+                    <a href="store.html#resume" class="btn outline">My Resume</a>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/rajvenkadam-s-7a1a7b350" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/s_k_raj.official" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/919629798166" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
                 </div>
             </div>
-            
-            <!-- Floating Shapes -->
-            <div class="shape shape-1"></div>
-            <div class="shape shape-2"></div>
-            <div class="shape shape-3"></div>
-        </section>
-    </main>
 
-    <!-- Footer -->
-    <footer class="footer">
-        <div class="footer-content">
-            <p>&copy; 2025 RAJVENKADAM. All rights reserved.</p>
+            <!-- RIGHT IMAGE -->
+            <div class="hero-img fade-in">
+                <div class="glow-ring">
+                    <img src="assets/images/profile.png" alt="Profile" />
+                </div>
+            </div>
         </div>
-    </footer>
+
+        <!-- BACKGROUND SHAPES -->
+        <div class="shape shape1"></div>
+        <div class="shape shape2"></div>
+        <div class="shape shape3"></div>
+    </section>
 
     <script src="dist/js/script.min.js"></script>
-    <!-- Structured Data -->
-    <script type="application/ld+json">
-    {
-        "@context": "https://schema.org",
-        "@type": "Person",
-        "name": "RAJVENKADAM",
-        "jobTitle": "MERN Stack Developer",
-        "description": "MERN Stack Developer specializing in MongoDB, Express, React, and Node.js with a passion for delivering projects on time.",
-        "url": "https://www.rajvenkadamporfolio.com/",
-        "image": "https://www.rajvenkadamporfolio.com/assets/images/profile.png",
-        "sameAs": [
-            "https://www.linkedin.com/in/rajvenkadam",
-            "https://github.com/rajvenkadam"
-        ]
-    }
-    </script>
 </body>
 </html>
