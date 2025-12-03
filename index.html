@@ -18,7 +18,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">Don't wait for the Opportunities, Build them!</a>
+                    <a href="index.html">Hi Buddies!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -34,7 +34,7 @@
                         <a href="store.html" class="nav-link">My Store</a>
                     </li>
                 </ul>
-                <div class="nav-toggle" id="hamburger">
+                <div class="nav-toggle" id="mobile-menu">
                     <span class="bar"></span>
                     <span class="bar"></span>
                     <span class="bar"></span>
@@ -49,23 +49,24 @@
 
             <!-- LEFT TEXT -->
             <div class="hero-text fade-in">
+                <div class="shape shape2"></div>
                 <h2>Hello.</h2>
-                <h1>I'm <span class="purple">RAJVENKADAM</span></h1>
-                <h3>Software Developer</h3>
+                <h1>I'm <span class="purple">RAJVENKADAM S</span></h1>
+                <h3>Developer | Designer | Forever Learner</h3>
 
                 <div class="buttons">
                     <a href="store.html" class="btn primary">Explore my projects</a>
-                    <a href="store.html#resume" class="btn outline">My Resume</a>
+                    <button id="resumeBtn" class="btn outline">My Resume</button>
                 </div>
 
                 <div class="social-icons">
-                    <a href="https://www.linkedin.com/in/rajvenkadam-s-7a1a7b350" target="_blank" rel="noopener noreferrer" class="social-icon linkedin">
+                    <a href="https://www.linkedin.com/in/rajvenkadam-s-7a1a7b350" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn">
                         <i class="fab fa-linkedin-in"></i>
                     </a>
-                    <a href="https://www.instagram.com/s_k_raj.official" target="_blank" rel="noopener noreferrer" class="social-icon instagram">
+                    <a href="https://www.instagram.com/s_k_raj.official" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
                         <i class="fab fa-instagram"></i>
                     </a>
-                    <a href="https://wa.me/919629798166" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp">
+                    <a href="https://wa.me/919629798166" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp">
                         <i class="fab fa-whatsapp"></i>
                     </a>
                 </div>
@@ -79,12 +80,59 @@
             </div>
         </div>
 
-        <!-- BACKGROUND SHAPES -->
-        <div class="shape shape1"></div>
-        <div class="shape shape2"></div>
-        <div class="shape shape3"></div>
+
     </section>
 
-    <script src="dist/js/script.min.js"></script>
+    <script src="js/script.js"></script>
+    <script>
+        // Resume modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const resumeBtn = document.getElementById('resumeBtn');
+            let resumeModal = document.getElementById('resumeModal');
+
+            if (resumeModal) {
+                resumeModal.remove();
+            }
+
+            resumeModal = document.createElement('div');
+            resumeModal.id = 'resumeModal';
+            resumeModal.className = 'modal';
+            resumeModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <h2>Professional Resume</h2>
+                    </div>
+                    <div class="modal-body">
+                            <div class="resume-header">
+                                <p>Download my complete professional resume</p>
+                            </div>
+                            <div class="resume-actions">
+                                <a href="#" class="btn btn-primary">Download Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(resumeModal);
+
+            const closeBtn = resumeModal.querySelector('.close');
+
+            resumeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                resumeModal.style.display = 'block';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                resumeModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === resumeModal) {
+                    resumeModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
 </body>
 </html>

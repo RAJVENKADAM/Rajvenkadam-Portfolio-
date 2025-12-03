@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>RAJVENKADAM's Store | Projects, Certificates & Resume</title>
     <meta name="description" content="Explore RAJVENKADAM's portfolio store featuring projects, certificates, and professional resume. MERN Stack Developer showcasing work and achievements.">
     <meta name="keywords" content="Developer Portfolio, Projects, Certificates, Resume, MERN Stack Work, Web Development Portfolio">
@@ -36,7 +36,7 @@
         <nav class="navbar">
             <div class="nav-container">
                 <div class="nav-logo">
-                    <a href="index.html">Don't wait for the Opportunities, Build them!</a>
+                    <a href="index.html">Hi Buddies!</a>
                 </div>
                 <ul class="nav-menu">
                     <li class="nav-item">
@@ -68,83 +68,39 @@
         <section class="store">
             <div class="container">
                 <header class="section-header">
-                    <h1>My Store</h1>
+                    <h1>My Projects</h1>
                 </header>
-                
-                <div class="tabs">
-                    <div class="tab-nav">
-                        <button class="tab-link active" data-tab="apps">Apps</button>
-                        <button class="tab-link" data-tab="certificates">Certificates</button>
-                        <button class="tab-link" data-tab="resume">Resume</button>
+
+                <div class="store-grid">
+                    <div class="store-card glass-card" data-project="syco">
+                        <img src="assets/images/syco.jpg" alt="SYCO" />
+                        <h3>SYCO</h3>
+                        <p>The app SYCO predicts your personality type- Alpha, Beta, Gamma, Sigma- based on your mindset.</p>
                     </div>
-                    
-                    <div class="tab-content">
-                        <!-- Apps Tab -->
-                        <div id="apps" class="tab-pane active">
-                            <div class="store-grid">
-                                <div class="store-card glass-card" data-project="alpha">
-                                    <div class="card-badge">Coming Soon</div>
-                                    <h3>Project Alpha</h3>
-                                    <p>An innovative web application built with the latest technologies.</p>
-                                </div>
-                                
-                                <div class="store-card glass-card" data-project="beta">
-                                    <div class="card-badge">Coming Soon</div>
-                                    <h3>Project Beta</h3>
-                                    <p>A mobile-responsive solution for modern businesses.</p>
-                                </div>
-                                
-                                <div class="store-card glass-card" data-project="gamma">
-                                    <div class="card-badge">Coming Soon</div>
-                                    <h3>Project Gamma</h3>
-                                    <p>An enterprise-level application with advanced features.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Certificates Tab -->
-                        <div id="certificates" class="tab-pane">
-                            <div class="store-grid">
-                                <div class="store-card glass-card" data-project="mern">
-                                    <div class="certificate-placeholder"></div>
-                                    <h3>MERN Stack Certification</h3>
-                                    <p>Complete certification in MongoDB, Express, React, and Node.js development.</p>
-                                </div>
-                                
-                                <div class="store-card glass-card" data-project="js">
-                                    <div class="certificate-placeholder"></div>
-                                    <h3>Advanced JavaScript</h3>
-                                    <p>In-depth knowledge of modern JavaScript ES6+ features.</p>
-                                </div>
-                                
-                                <div class="store-card glass-card" data-project="uiux">
-                                    <div class="certificate-placeholder"></div>
-                                    <h3>UI/UX Design</h3>
-                                    <p>User-centered design principles and implementation techniques.</p>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Resume Tab -->
-                        <div id="resume" class="tab-pane">
-                            <div class="resume-card glass-card">
-                                <div class="resume-header">
-                                    <h3>Professional Resume</h3>
-                                    <p>Download my complete professional resume</p>
-                                </div>
-                                <div class="resume-actions">
-                                    <a href="#" class="btn btn-primary">Download Resume</a>
-                                </div>
-                            </div>
-                        </div>
-                        
-                        <!-- Future Tab -->
-                        <div id="future" class="tab-pane">
-                            <div class="future-placeholder glass-card">
-                                <h3>More Coming Soon</h3>
-                                <p>Stay tuned for more exciting projects and updates!</p>
-                            </div>
-                        </div>
+                    <div class="store-card glass-card" data-project="second-layer-password">
+                        <img src="assets/images/slp.jpg" alt="Second Layer Password" />
+                        <h3>Second Layer Password</h3>
+                        <p>Custom Second Layer OTP Lock for laptop using Python (Tkinter + TOTP).</p>
+                    </div>
+                    <div class="store-card glass-card" data-project="friendly-e-com">
+                        <img src="assets/images/friecom.jpg" alt="Friendly E-com" />
+                        <h3>Friendly E-com</h3>
+                        <p>Friendly Warehouse Management Website for small shops. It alerts the shopkeepers when the stocks are in low count.</p>
+                    </div>
+                    <div class="store-card glass-card" data-project="fire-sensor-from-wastes">
+                        <img src="assets/images/firealarm.jpg" alt="Fire sensor from wastes" />
+                        <h3>Fire sensor from wastes</h3>
+                        <p>This fire alarm was made from the waste tubelights so that it is very cost effective and eco friendly.</p>
+                    </div>
+                    <div class="store-card glass-card" data-project="agnikanavugal-motivational-story-book">
+                        <img src="assets/images/agni.jpg" alt="Agnikanavugal- Motivational Story Book" />
+                        <h3>Agnikanavugal- Motivational Story Book</h3>
+                        <p>It is the Tamil Motivational story book. Which motivates you with imaginary stories.</p>
+                    </div>
+                    <div class="store-card glass-card" data-project="thulir-homecare-products-ui">
+                        <img src="assets/images/thulir.png" alt="Thulir Homecare Products- UI" />
+                        <h3>Thulir Homecare Products- UI</h3>
+                        <p>The UI structure for the Startup company of Thulir.</p>
                     </div>
                 </div>
             </div>
@@ -162,60 +118,88 @@
             <div class="modal-body" id="projectModalBody">
                 <p>Details about this project will appear here.</p>
             </div>
-            <div class="modal-footer">
-                <a href="#" id="projectLink" class="btn-modal" target="_blank">Download APK</a>
-                <button class="btn-modal" id="projectModalCloseBtn">Close</button>
-            </div>
         </div>
     </div>
 
-    <script src="dist/js/script.min.js"></script>
+    <script src="js/script.js"></script>
     <script>
         // Project details data
         const projectDetails = {
-            'alpha': {
-                title: 'Project Alpha',
-                description: 'An innovative web application built with the latest technologies.',
+            'syco': {
+                title: 'SYCO',
+                description: 'Syco predicts your personality type- Alpha, Beta, Gamma, Sigma- based on your mindset.',
                 features: [
-                    'Responsive design for all devices',
-                    'Real-time data synchronization',
-                    'User authentication and authorization',
-                    'Advanced analytics dashboard',
-                    'API integration with third-party services',
-                    'Performance optimized for fast loading'
+                    'Personality type prediction (Alpha, Beta, Gamma, Sigma)',
+                    'Interactive quizzes.',
+                    'Insightful personality reports',
+                    'Simple, user-friendly interface'
                 ],
-                technologies: ['React', 'Node.js', 'MongoDB', 'Express'],
-                status: 'Coming Soon',
+                technologies: ['React Native'],
+                status: 'Available',
+                apkLink: 'https://drive.google.com/uc?export=download&id=1EMh57KzSOX3s5rTWcuJU86qyTO4432jx'
+            },
+            'second-layer-password': {
+                title: 'Second Layer Password',
+                description: 'Custom Second Layer OTP Lock for laptop using Python (Tkinter + TOTP). Every startup, my screen asks for a time-based OTP, just like Google Authenticator.',
+                features: [
+                    'Full-screen modern UI with black background',
+                    'OTP entry boxes with rounded corners',
+                    '6-digit TOTP generated from a shared secret (like Google Authenticator)',
+                    'Countdown timer showing OTP expiry',
+                    'Emergency unlock keys in case of any issue'
+                ],
+                technologies: ['Python', 'Tkinter', 'TOTP'],
+                status: 'Available',
                 apkLink: '#'
             },
-            'beta': {
-                title: 'Project Beta',
-                description: 'A mobile-responsive solution for modern businesses.',
+            'friendly-e-com': {
+                title: 'Friendly E-com',
+                description: 'Friendly Warehouse Management Website for small shops. It alerts the shopkeepers when the stocks are in low count.',
                 features: [
-                    'Cross-platform compatibility',
-                    'Mobile-first design approach',
-                    'Offline functionality support',
-                    'Push notifications system',
-                    'Social media integration',
-                    'Customizable user interface'
+                    'Add daily stock entries',
+                    'Scan barcodes on sales to auto-decrease stock',
+                    'Low-stock alerts',
+                    'Customer interface like Amazon/Flipkart',
+                    'Barcode scan access limited to shop owners'
                 ],
-                technologies: ['React Native', 'Firebase', 'Redux'],
-                status: 'Coming Soon',
+                technologies: ['Google Sites', 'Python', 'Streamlit'],
+                status: 'Available',
                 apkLink: '#'
             },
-            'gamma': {
-                title: 'Project Gamma',
-                description: 'An enterprise-level application with advanced features.',
+            'fire-sensor-from-wastes': {
+                title: 'Fire sensor from wastes',
+                description: 'This alarm made is made from the waste tubelights so that it is very cost effective and eco friendly.',
                 features: [
-                    'Multi-tenant architecture',
-                    'Role-based access control',
-                    'Advanced reporting and analytics',
-                    'Data encryption and security',
-                    'Scalable microservices architecture',
-                    'CI/CD pipeline integration'
+                    'Cost effective',
+                    'Any one can make this',
+                    'Eco friendly'
                 ],
-                technologies: ['Angular', 'Spring Boot', 'PostgreSQL', 'Docker'],
-                status: 'Coming Soon',
+                technologies: ['Waste Tubelights', 'Buzzer', 'Battery 9V', 'Wires'],
+                status: 'Available',
+                apkLink: '#'
+            },
+            'agnikanavugal-motivational-story-book': {
+                title: 'Agnikanavugal- Motivational Story Book',
+                description: 'It is the Tamil Motivational story book. Which motivates you with imaginary stories.',
+                features: [
+                    'Written by Rajvenkadam S',
+                    'Recognised by Knowledge Institute of Technology, Salem',
+                    'Motivates you with small unbelievable stories'
+                ],
+                technologies: ['Tamil Literature'],
+                status: 'Available',
+                apkLink: '#'
+            },
+            'thulir-homecare-products-ui': {
+                title: 'Thulir Homecare Products- UI',
+                description: 'The UI structure for the Startup company of Thulir.',
+                features: [
+                    'User friendly',
+                    'No code platform',
+                    'Non tech manager can change the design'
+                ],
+                technologies: ['Canva'],
+                status: 'Available',
                 apkLink: '#'
             },
             'mern': {
@@ -282,17 +266,32 @@
 
                     if (project) {
                         modalTitle.textContent = project.title;
+                        const statusHtml = project.status !== 'Available' ? `<p><strong>Status:</strong> <span class="card-badge">${project.status}</span></p>` : '';
+                        let techLabel = 'Technologies Used:';
+                        if (projectKey === 'fire-sensor-from-wastes') {
+                            techLabel = 'Material Used:';
+                        } else if (projectKey === 'agnikanavugal-motivational-story-book') {
+                            techLabel = 'Language: Tamil';
+                        }
+                        let viewButton = '';
+                        if (projectKey === 'second-layer-password') {
+                            viewButton = `<div class="modal-footer"><a href="https://www.linkedin.com/posts/rajvenkadam-s-7a1a7b350_my-next-product-is-on-live-from-a-activity-7397521550226247680-FPur?utm_source=share&utm_medium=member_android&rcm=ACoAAFe5PakBbH7BWYBLJ0Qme-WwCPVwMiUxpM0" target="_blank" class="btn-modal">View</a></div>`;
+                        } else if (projectKey === 'friendly-e-com') {
+                            viewButton = `<div class="modal-footer"><a href="https://sites.google.com/kiot.ac.in/mymarket/home" target="_blank" class="btn-modal">View</a></div>`;
+                        } else if (projectKey === 'thulir-homecare-products-ui') {
+                            viewButton = `<div class="modal-footer"><a href="https://thulir-homecare-products.my.canva.site/wwwthulir-homecare-products-rasipuram-namakkal" target="_blank" class="btn-modal">View</a></div>`;
+                        }
                         modalBody.innerHTML = `
-                            <p><strong>Status:</strong> <span class="card-badge">${project.status}</span></p>
+                            ${statusHtml}
                             <p>${project.description}</p>
                             <h3>Key Features:</h3>
                             <ul>
                                 ${project.features.map(feature => `<li>${feature}</li>`).join('')}
                             </ul>
-                            <h3>Technologies Used:</h3>
+                            <h3>${techLabel}</h3>
                             <p>${project.technologies.join(', ')}</p>
+                            ${viewButton}
                         `;
-                        projectLink.href = project.apkLink;
                         modal.style.display = 'block';
                     }
                 });
@@ -304,7 +303,6 @@
             }
 
             closeBtn.addEventListener('click', closeProjectModal);
-            modalCloseBtn.addEventListener('click', closeProjectModal);
 
             // Close modal when clicking outside of it
             window.addEventListener('click', function(event) {
