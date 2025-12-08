@@ -134,5 +134,92 @@
             });
         });
     </script>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget">
+        <img id="chat-button" src="assets/images/buddy.jpg" alt="Chat Button" title="Chat Button">
+        <div id="chat-box">
+        <div id="chat-header">
+            <span>I am Raj, AI version!</span>
+            <span id="chat-close">&times;</span>
+        </div>
+            <div id="chat-messages"></div>
+            <div id="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Ask about me...">
+                    <button id="chat-send"><i class="fa-solid fa-paper-plane"></i></button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <script>
+        // Chat Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatBox = document.getElementById('chat-box');
+            const chatClose = document.getElementById('chat-close');
+            const chatInput = document.getElementById('chat-input');
+            const chatSend = document.getElementById('chat-send');
+            const chatMessages = document.getElementById('chat-messages');
+
+
+
+            // Toggle chat box
+            chatButton.addEventListener('click', function() {
+                chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+            });
+
+            // Close chat box
+            chatClose.addEventListener('click', function() {
+                chatBox.style.display = 'none';
+            });
+
+            // Send message for desktop
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user', chatMessages);
+                    chatInput.value = '';
+
+                    // Send to backend
+                    fetch('http://localhost:5000/chat', {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify({ question: message })
+                    })
+                    .then(response => response.json())
+                    .then(data => {
+                        addMessage(data.answer, 'bot', chatMessages);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        addMessage('Sorry, I am unable to respond right now.', 'bot', chatMessages);
+                    });
+                }
+            }
+
+            chatSend.addEventListener('click', sendMessage);
+
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Add message to chat
+            function addMessage(text, sender, container) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.textContent = text;
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+            }
+        });
+    </script>
 </body>
 </html>

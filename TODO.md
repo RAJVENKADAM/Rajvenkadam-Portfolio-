@@ -1,10 +1,12 @@
-# TODO: Update Skills Page
+# TODO: Enhance Chatbot Button
 
 ## Tasks
-- [x] Restructure HTML for separate sections (Technical Skills, Non-Technical Skills, Tools)
-- [x] Add subsections within each section for skill categories
-- [x] Display skills as small rounded squares/buttons
-- [x] Update modal to show details from provided content
-- [x] Make modal scrollable independently
-- [x] Update CSS for new layout and responsive design
-- [x] Test functionality and responsiveness
+- [ ] Update #chat-button background to rainbow gradient
+- [ ] Add floating animation keyframes
+- [ ] Apply floating animation to #chat-button
+- [ ] Add subtle glow effect with box-shadow
+- [ ] Reposition #chat-widget in mobile media query to center above "Hello"
+
+## Followup Steps
+- [ ] Test button animation and positioning on desktop and mobile
+- [ ] Ensure no interference with other elements

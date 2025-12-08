@@ -1,0 +1,11 @@
+{
+  "liveServer.settings.port": 5501,
+  "liveServer.settings.ignoreFiles": [
+    "**/*.py"
+  ],
+  "liveServer.settings.proxy": {
+    "enable": true,
+    "baseUri": "/chat",
+    "proxyUri": "http://localhost:8000"
+  }
+}
