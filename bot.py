@@ -1,8 +1,9 @@
 # bot.py
+import os
 from groq import Groq
 
 # Initialize Groq client
-client = Groq(api_key="REDACTED")  # Replace with your API key
+client = Groq(api_key=os.environ.get('GROQ_API_KEY'))  # Load from environment variable
 
 # Load your personal info from data.txt
 with open("data.txt", "r", encoding="utf-8") as f:
