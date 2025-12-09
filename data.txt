@@ -160,3 +160,5 @@ Portfolio Website: https://www.rajvenkadamporfolio.com
 
 NAME: Rajvenkadam
 TITLE: MERN Stack Developer | AI Tool Expert | Designer | Creative Technologist
+Designation: Student at Knowledge Institute of Technology, Salem. Currently in 2nd Year IT department.
+Address: Idappadi, Salem.
