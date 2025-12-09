@@ -4,7 +4,7 @@ from dotenv import load_dotenv
 from groq import Groq
 
 # Load environment variables from .env file
-load_dotenv(dotenv_path="E:/My App/My Portfolio/.env")
+load_dotenv()
 
 # Get API key from environment
 api_key = os.getenv("GROQKEY")
