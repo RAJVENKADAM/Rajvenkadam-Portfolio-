@@ -17,6 +17,7 @@
             <span>Chat with RAJVENKADAM</span>
         </div>
         <div id="chat-messages"></div>
+        <div id="typing-indicator" class="message bot" style="display: none;"></div>
         <div id="chat-input-container">
             <textarea id="chat-input" placeholder="Type your message..." aria-label="Type your message" rows="1"></textarea>
         </div>
@@ -41,7 +42,7 @@
                     chatInput.value = '';
 
                     // Send to backend
-                    fetch('http://localhost:5000/chat', {
+                    fetch('https://rajvenkadam-portfolio.onrender.com/chat', {
                         method: 'POST',
                         headers: {
                             'Content-Type': 'application/json'

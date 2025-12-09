@@ -1294,11 +1294,15 @@ body {
         width: 350px;
         height: 100vh;
         background: rgba(0, 0, 0, 0.9);
-        border-radius: 10;
+        border-radius: 0;
         padding-top: env(safe-area-inset-top);
         padding-bottom: env(safe-area-inset-bottom);
         padding-left: env(safe-area-inset-left);
         padding-right: env(safe-area-inset-right);
+    }
+
+    #chat-header {
+        border-radius: 0;
     }
 }
 
@@ -1336,7 +1340,7 @@ body {
 }
 
 #chat-header {
-    background: linear-gradient(155deg,#444444, #000000);
+    background: linear-gradient(135deg,#272727, #292828);
     color: #fff;
     padding: 10px;
     border-radius: 10px 10px 0 0;
@@ -1386,7 +1390,7 @@ body {
 }
 
 .message.user {
-    background: rgba(255, 255, 255, 0.1);
+    background: linear-gradient(155deg,#ff5e00, #ff5e00);
     color: #ffffff;
     align-self: flex-end;
     margin-left: auto;
@@ -1394,8 +1398,8 @@ body {
 }
 
 .message.bot {
-    background:"transparent";
-    color: #f0f0f0;
+    background:rgba(44, 44, 44, 0.8);
+    color: #ffffff;
     font-size: 12px;
 }
 
