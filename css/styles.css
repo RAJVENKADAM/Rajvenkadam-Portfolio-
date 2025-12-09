@@ -1755,7 +1755,7 @@ body {
     }
 
     #full-chat #chat-input {
-        padding: 12px 14px;
+        padding: 12px 40px 12px 14px;
         font-size: 12px;
         min-height: 44px;
         max-height: 120px;
