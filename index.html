@@ -13,126 +13,217 @@
 </head>
 
 <body>
-<header>
-    <nav class="navbar">
-        <div class="nav-container">
-            <div class="nav-logo">
-                <a href="index.html">Hi Buddies!</a>
+    <header>
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="nav-container">
+                <div class="nav-logo">
+                    <a href="index.html">Hi Buddies!</a>
+                </div>
+                <ul class="nav-menu">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link active">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="about.html" class="nav-link">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="skills.html" class="nav-link">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="store.html" class="nav-link">My Store</a>
+                    </li>
+                </ul>
+                <div class="nav-toggle" id="mobile-menu">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
             </div>
-            <ul class="nav-menu">
-                <li><a href="index.html" class="nav-link active">Home</a></li>
-                <li><a href="about.html" class="nav-link">About</a></li>
-                <li><a href="skills.html" class="nav-link">Skills</a></li>
-                <li><a href="store.html" class="nav-link">My Store</a></li>
-            </ul>
-            <div class="nav-toggle" id="mobile-menu">
-                <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        </nav>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero">
+        <div class="container hero-content">
+
+            <!-- LEFT TEXT -->
+            <div class="hero-text fade-in">
+                <div class="shape shape2"></div>
+                <h2>Hello.</h2>
+                <h1>I'm <span class="purple">RAJVENKADAM S</span></h1>
+                <h3>Developer | Designer | Forever Learner</h3>
+
+                <div class="buttons">
+                    <a href="store.html" class="btn primary">Explore my projects</a>
+                    <button id="resumeBtn" class="btn outline">My Resume</button>
+                </div>
+
+                <div class="social-icons">
+                    <a href="https://www.linkedin.com/in/rajvenkadam-s-7a1a7b350" target="_blank" rel="noopener noreferrer" class="social-icon linkedin" aria-label="LinkedIn">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/s_k_raj.official" target="_blank" rel="noopener noreferrer" class="social-icon instagram" aria-label="Instagram">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://wa.me/919629798166" target="_blank" rel="noopener noreferrer" class="social-icon whatsapp" aria-label="WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                </div>
+            </div>
+
+            <!-- RIGHT IMAGE -->
+            <div class="hero-img fade-in">
+                <div class="glow-ring">
+                    <img src="assets/images/profile.png" alt="Profile" />
+                </div>
             </div>
         </div>
-    </nav>
-</header>
 
-<section class="hero">
-    <div class="container hero-content">
-        <div class="hero-text fade-in">
-            <h2>Hello.</h2>
-            <h1>I'm <span class="purple">RAJVENKADAM S</span></h1>
-            <h3>Developer | Designer | Forever Learner</h3>
 
-            <div class="buttons">
-                <a href="store.html" class="btn primary">Explore my projects</a>
-                <button id="resumeBtn" class="btn outline">My Resume</button>
-            </div>
+    </section>
 
-            <div class="social-icons">
-                <a href="https://www.linkedin.com/in/rajvenkadam-s-7a1a7b350" target="_blank" class="social-icon linkedin"><i class="fab fa-linkedin-in"></i></a>
-                <a href="https://www.instagram.com/s_k_raj.official" target="_blank" class="social-icon instagram"><i class="fab fa-instagram"></i></a>
-                <a href="https://wa.me/919629798166" target="_blank" class="social-icon whatsapp"><i class="fab fa-whatsapp"></i></a>
-            </div>
-        </div>
+    <script src="js/script.js"></script>
+    <script>
+        // Resume modal functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const resumeBtn = document.getElementById('resumeBtn');
+            let resumeModal = document.getElementById('resumeModal');
 
-        <div class="hero-img fade-in">
-            <div class="glow-ring">
-                <img src="assets/images/profile.png" alt="Profile" />
-            </div>
-        </div>
-    </div>
-</section>
+            if (resumeModal) {
+                resumeModal.remove();
+            }
 
-<!-- Chat Widget -->
-<div id="chat-widget">
-    <img id="chat-button" src="assets/images/buddy.jpg" alt="Chat Button">
-    <div id="chat-box">
+            resumeModal = document.createElement('div');
+            resumeModal.id = 'resumeModal';
+            resumeModal.className = 'modal';
+            resumeModal.innerHTML = `
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <div class="modal-header">
+                        <h2>Professional Resume</h2>
+                    </div>
+                    <div class="modal-body">
+                            <div class="resume-header">
+                                <p>Download my complete professional resume</p>
+                            </div>
+                            <div class="resume-actions">
+                                <a href="#" class="btn btn-primary">Download Resume</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            document.body.appendChild(resumeModal);
+
+            const closeBtn = resumeModal.querySelector('.close');
+
+            resumeBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                resumeModal.style.display = 'block';
+            });
+
+            closeBtn.addEventListener('click', function() {
+                resumeModal.style.display = 'none';
+            });
+
+            window.addEventListener('click', function(event) {
+                if (event.target === resumeModal) {
+                    resumeModal.style.display = 'none';
+                }
+            });
+        });
+    </script>
+
+    <!-- Chat Widget -->
+    <div id="chat-widget">
+        <img id="chat-button" src="assets/images/buddy.jpg" alt="Chat Button" title="Chat Button">
+        <div id="chat-box">
         <div id="chat-header">
-            <span>I am Raj, AI version!</span>
+            <span>I am Raj's, AI assistant!</span>
             <span id="chat-close">&times;</span>
         </div>
-        <div id="chat-messages"></div>
-        <div id="chat-input-container">
-            <div class="input-wrapper">
-                <input type="text" id="chat-input" placeholder="Ask about me...">
-                <button id="chat-send"><i class="fa-solid fa-paper-plane"></i></button>
+            <div id="chat-messages"></div>
+            <div id="chat-input-container">
+                <div class="input-wrapper">
+                    <input type="text" id="chat-input" placeholder="Ask about Raj...">
+                    <i class="fas fa-arrow-up"></i>
+                </div>
             </div>
         </div>
     </div>
-</div>
 
-<script>
-// Chat System
-document.addEventListener('DOMContentLoaded', () => {
 
-    const API_URL = "https://buddy-bot-nlt0.onrender.com/chat"; // Updated backend URL
 
-    const chatButton = document.getElementById("chat-button");
-    const chatBox = document.getElementById("chat-box");
-    const chatClose = document.getElementById("chat-close");
-    const chatInput = document.getElementById("chat-input");
-    const chatSend = document.getElementById("chat-send");
-    const chatMessages = document.getElementById("chat-messages");
+    <script>
+        // Chat Widget Functionality
+        document.addEventListener('DOMContentLoaded', function() {
+            const chatButton = document.getElementById('chat-button');
+            const chatBox = document.getElementById('chat-box');
+            const chatClose = document.getElementById('chat-close');
+            const chatInput = document.getElementById('chat-input');
+            const chatMessages = document.getElementById('chat-messages');
+            const chatSendIcon = document.querySelector('.input-wrapper i');
 
-    function addMessage(text, sender) {
-        const div = document.createElement("div");
-        div.className = `message ${sender}`;
-        div.textContent = text;
-        chatMessages.appendChild(div);
-        chatMessages.scrollTop = chatMessages.scrollHeight;
-        return div;
-    }
 
-    function sendMessage() {
-        const message = chatInput.value.trim();
-        if (!message) return;
 
-        addMessage(message, 'user');
-        chatInput.value = '';
+            // Toggle chat box
+            chatButton.addEventListener('click', function() {
+                chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
+            });
 
-        // Typing Indicator
-        const typingDiv = addMessage("Typing...", "bot");
+            // Close chat box
+            chatClose.addEventListener('click', function() {
+                chatBox.style.display = 'none';
+            });
 
-        fetch(API_URL, {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ question: message })
-        })
-        .then(res => res.json())
-        .then(data => {
-            typingDiv.remove();
-            addMessage(data.answer || "No response received.", "bot");
-        })
-        .catch(err => {
-            typingDiv.remove();
-            addMessage("⚠ Server error. Try again later.", "bot");
+            // Send message on icon click
+            chatSendIcon.addEventListener('click', function() {
+                sendMessage();
+            });
+
+            // Send message for desktop
+            function sendMessage() {
+                const message = chatInput.value.trim();
+                if (message) {
+                    addMessage(message, 'user', chatMessages);
+                    chatInput.value = '';
+ const typingDiv = addMessage("Typing...", "bot");
+                    // Send to backend
+                    fetch('https://buddy-bot-nlt0.onrender.com/chat', {
+    method: 'POST',
+    headers: {
+        'Content-Type': 'application/json'
+    },
+    body: JSON.stringify({ question: message })
+})
+
+                    .then(response => response.json())
+                    .then(data => {
+                        addMessage(data.answer, 'bot', chatMessages);
+                    })
+                    .catch(error => {
+                        console.error('Error:', error);
+                        addMessage('Sorry, I am unable to respond right now.', 'bot', chatMessages);
+                    });
+                }
+            }
+
+            chatInput.addEventListener('keypress', function(e) {
+                if (e.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Add message to chat
+            function addMessage(text, sender, container) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = `message ${sender}`;
+                messageDiv.textContent = text;
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+            }
         });
-    }
-
-    chatSend.addEventListener("click", sendMessage);
-    chatInput.addEventListener("keypress", (e) => { if (e.key === "Enter") sendMessage(); });
-
-    chatButton.addEventListener("click", () => chatBox.style.display = "flex");
-    chatClose.addEventListener("click", () => chatBox.style.display = "none");
-
-});
-</script>
-
+    </script>
 </body>
 </html>

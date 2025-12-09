@@ -18,10 +18,7 @@
         </div>
         <div id="chat-messages"></div>
         <div id="chat-input-container">
-            <input type="text" id="chat-input" placeholder="Type your message..." aria-label="Type your message">
-            <button id="chat-send" aria-label="Send message">
-                <i class="fas fa-arrow-up"></i>
-            </button>
+            <textarea id="chat-input" placeholder="Type your message..." aria-label="Type your message" rows="1"></textarea>
         </div>
     </div>
 
@@ -29,7 +26,6 @@
         document.addEventListener('DOMContentLoaded', function() {
             const chatClose = document.getElementById('chat-close');
             const chatInput = document.getElementById('chat-input');
-            const chatSend = document.getElementById('chat-send');
             const chatMessages = document.getElementById('chat-messages');
 
             // Close chat and go back to index
@@ -62,8 +58,6 @@
                     });
                 }
             }
-
-            chatSend.addEventListener('click', sendMessage);
 
             chatInput.addEventListener('keypress', function(e) {
                 if (e.key === 'Enter') {
