@@ -1,7 +1,7 @@
-ABOUT RAJVENKADAM S AND HIS PORTFOLIO WEBSITE
+ABOUT RAJVENKADAM AND HIS PORTFOLIO WEBSITE
 
 INTRODUCTION
-Hey there — I’m Rajvenkadam S.
+Hey there — I’m Rajvenkadam.
 Developer | Designer | Forever Learner.
 
 I am a passionate software developer specializing in the MERN Stack (MongoDB, Express, React, and Node.js). My journey in tech began with curiosity about how websites work, and today that curiosity has evolved into a mission to build meaningful digital products that solve real-world problems. I believe in continuous learning, embracing challenges, and turning ideas into execution.
@@ -158,5 +158,5 @@ WhatsApp: https://wa.me/919629798166
 
 Portfolio Website: https://www.rajvenkadamporfolio.com
 
-NAME: Rajvenkadam S
+NAME: Rajvenkadam
 TITLE: MERN Stack Developer | AI Tool Expert | Designer | Creative Technologist

@@ -1,28 +1,35 @@
+# server.py
 from flask import Flask, request, jsonify
 from flask_cors import CORS
-from bot import ask_bot  # Import your existing bot function
+from dotenv import load_dotenv
+from bot import ask_bot  # Import your bot function
+import os
+
+# Load environment variables
+load_dotenv()
 
 app = Flask(__name__)
-CORS(app)  # Allow frontend to call this server
+CORS(app)  # Allow frontend to make requests to this server
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.get_json()
-    question = data.get("question", "").strip()
-
-    if not question:
-        return jsonify({"error": "No question provided"}), 400
-
     try:
-        # Call your bot function
+        data = request.get_json()
+        if not data or "question" not in data:
+            return jsonify({"error": "No question provided"}), 400
+
+        question = data["question"].strip()
+        if not question:
+            return jsonify({"error": "Empty question"}), 400
+
+        # Call the bot function
         answer = ask_bot(question)
 
-        # Ensure answer is a string
+        # Ensure answer is string
         if isinstance(answer, list) and len(answer) > 0:
-            # For Groq responses returned as list of dicts
-            answer = answer[0].get("generated_text", "Sorry, I cannot answer right now.")
+            answer = answer[0].get("generated_text", "Sorry, I am unable to respond right now.")
         elif isinstance(answer, dict):
-            answer = answer.get("generated_text", "Sorry, I cannot answer right now.")
+            answer = answer.get("generated_text", "Sorry, I am unable to respond right now.")
         else:
             answer = str(answer)
 
@@ -34,4 +41,4 @@ def chat():
 
 if __name__ == "__main__":
     print("🤖 Chatbot server running on http://localhost:5000")
-    app.run(port=5000)
+    app.run(host="0.0.0.0", port=5000)
