@@ -161,6 +161,9 @@
 
         const API_URL = 'https://rajvenkadam-portfolio.onrender.com/chat'; // Deployed backend
 
+        // Add default message
+        addDefaultMessage(chatMessages);
+
         // Toggle chat box
         chatButton.addEventListener('click', function() {
             chatBox.style.display = chatBox.style.display === 'flex' ? 'none' : 'flex';
@@ -216,6 +219,24 @@
         function removeTypingIndicator() {
             const typingDiv = document.getElementById('typing');
             if (typingDiv) typingDiv.remove();
+        }
+
+        // Add default message with cross mark
+        function addDefaultMessage(container) {
+            const messageDiv = document.createElement('div');
+            messageDiv.className = 'message bot default-message';
+            messageDiv.innerHTML = `
+                <span class="message-text">For my first reply, wait for a minute!</span>
+                <span class="message-close" aria-label="Close message">&times;</span>
+            `;
+            container.appendChild(messageDiv);
+            container.scrollTop = container.scrollHeight;
+
+            // Add event listener to close button
+            const closeBtn = messageDiv.querySelector('.message-close');
+            closeBtn.addEventListener('click', function() {
+                messageDiv.remove();
+            });
         }
     });
     </script>

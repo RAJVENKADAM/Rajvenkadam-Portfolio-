@@ -29,6 +29,9 @@
             const chatInput = document.getElementById('chat-input');
             const chatMessages = document.getElementById('chat-messages');
 
+            // Add default message
+            addDefaultMessage(chatMessages);
+
             // Close chat and go back to index
             chatClose.addEventListener('click', function() {
                 window.location.href = 'index.html';
@@ -73,6 +76,24 @@
                 messageDiv.textContent = text;
                 container.appendChild(messageDiv);
                 container.scrollTop = container.scrollHeight;
+            }
+
+            // Add default message with cross mark
+            function addDefaultMessage(container) {
+                const messageDiv = document.createElement('div');
+                messageDiv.className = 'message bot default-message';
+                messageDiv.innerHTML = `
+                    <span class="message-text">For every first reply, wait for a minute! I will getup and reply you.</span>
+                    <span class="message-close" aria-label="Close message">&times;</span>
+                `;
+                container.appendChild(messageDiv);
+                container.scrollTop = container.scrollHeight;
+
+                // Add event listener to close button
+                const closeBtn = messageDiv.querySelector('.message-close');
+                closeBtn.addEventListener('click', function() {
+                    messageDiv.remove();
+                });
             }
         });
     </script>

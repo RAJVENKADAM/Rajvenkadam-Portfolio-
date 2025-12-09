@@ -1614,6 +1614,30 @@ body {
     border-bottom-left-radius: 4px;
 }
 
+/* Default message styles */
+.default-message {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.message-text {
+    flex: 1;
+}
+
+.message-close {
+    cursor: pointer;
+    font-size: 18px;
+    color: #ff6547;
+    margin-left: 10px;
+    transition: transform 0.3s ease;
+}
+
+.message-close:hover {
+    transform: scale(1.2);
+}
+
 /* Responsive Chat Widget */
 @media (max-width: 768px) {
     #chat-widget {
